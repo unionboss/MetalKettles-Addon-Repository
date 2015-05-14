@@ -1,1 +1,193 @@
-exec("import re;import base64");exec((lambda p,y:(lambda o,b,f:re.sub(o,b,f))(r"([0-9a-f]+)",lambda m:p(m,y),base64.b64decode("N2MgMWEsNTEsZixlLGMsNDUsYmEsMjYsMjgKZDkgOTAuZDguN2IgN2MgNWYKCjE3ICAgICAgICA9ICdiYi5jZC5iNycKMWMgICAgICAgPSA1MS41Zig5ZD0xNykKY2IgICAgICAgICAgID0gNWYoMTcsIDI4LjFiKQo2ICAgICAgICAgID0gMWEuMzEoYmEuOTcuOTkoJzY4Oi8vOTgvN2QvJyArIDE3ICwgJzYuYWQnKSkKMzUgICAgICAgICAgICA9IDFhLjMxKGJhLjk3Ljk5KCc2ODovLzk4LzdkLycgKyAxNywgJzM1LjhmJykpCjY2ICAgICAgICAgPSAnOWM6Ly9hZi40MC5kZi83Mi9lMy5lYicKM2IgICAgICAgID0gMWMuNGMoJzg0JykKMTQgICAgICAgPSAxYy40YygnMjInKQoKMjkgODMoKToKCWZhPTI0KDY2KQkKCTRiPTI2LjJiKCc1Mj0iKC4rPykiLis/OTI9IiguKz8pIi4rP2VjPSIoLis/KSInLDI2LjcwKS4yZChmYSkKCTNjIDUyLDkyLDEwMSA0MSA0YjoKCQk3OCBmMCAnOGUnIDQxIDUyOgoJCQkxMDEgPSAxMDEuYTAoJyAnLCclMjAnKSAKCQkJOTIgPSA5Mi5hMCgnICcsJyUyMCcpCgkJCWZmKDUyLDkyLDEsMTAxLDYpCgkJNzggJzhlJyA0MSA1MjoKCQkJNzggM2IgPT0gJzk1JzoKCQkJCTc4IDE0ID09ICcnOgoJCQkJICAgIDM0ID0gZi43NCgpCgkJCQkgICAgNzEgPSAzNC43ZignOGIgNmMnLCAnZWEgZGIgYzEgYjggZGQgODQgYTUnLCcnLCc3NSBiMSBhIDIyIGI4IGE4IDg1IGI5JywnN2UnLCdkMCBmZScpCgkJCQkgICAgNzggNzEgPT0gMToKCQkJCQkyMyA9IDFhLjU3KCcnLCAnYjIgNWUnKQoJCQkJCTIzLjY5KCkKCQkJCQk3OCAoMjMuNDIoKSk6CgkJCQkJICAgIDQ3ID0gMjMuNmUoKQoJCQkJCSAgICAxYy44YygnMjInLDQ3KSAgICAgIAoJCQkJCTEwMSA9IDEwMS5hMCgnICcsJyUyMCcpIAoJCQkJCTkyID0gOTIuYTAoJyAnLCclMjAnKQoJCQkJCWZmKDUyLDkyLDEsMTAxLDYpCgkJCTc4IDNiID09ICc5NSc6CgkJCQk3OCAxNCA8PiAnJzoKCQkJCQkxMDEgPSAxMDEuYTAoJyAnLCclMjAnKSAKCQkJCQk5MiA9IDkyLmEwKCcgJywnJTIwJykKCQkJCQlmZig1Miw5MiwxLDEwMSw2KQoJMWUoJyAnLCc5MicsJ2VlJywnMTAyJyw2KQoJMWUoJ2YzIGQzIGEzIGRhJywnOTInLDIsJzljOi8vYWYuNDAuZGYvNzIvYjYvYWEuYWQnLDYpCgkJCjI5IDU5KDkyKToKCTc4ICc4ZScgNDEgOTI6CgkJNzggMTQgPD4gJyc6CgkJCTM0ID0gZi43NCgpCgkJCTcxID0gMzQuN2YoJzhiIDZjJywgJzc1IGM1IGI1IDIyIGVmIGIxJywnYjggOWYnLCcnLCc3ZScsJ2RlIGY0IGI1IGM3JykKCQkJNzggNzEgPT0gMToKCQkJICAgMmY6ICAgICAKCQkJICAgICAgMjMgPSAxYS41NygnJywgJ2IyIDVlJykKCQkJICAgICAgMjMuNjkoKQoJCQkgICAgICA3OCAoMjMuNDIoKSk6CgkJCQkgICAgNDcgPSAyMy42ZSgpCgkJCSAgICAgIDc4IDQ3ID09IDE0OgoJCQkJMjUgPSA0NCg5MikKCQkJCTNjIDcgNDEgMjU6CgkJCQkgICAgICAgMWUoN1siNTIiXSw3WyI5MiJdLDMsMzUsNikKCQkJICAgZDc6MjEKCWQxOgoJCTI1ID0gNDQoOTIpCgkJM2MgNyA0MSAyNToKCQkJMWUoN1siNTIiXSw3WyI5MiJdLDMsMzUsNikKCQkKMjkgNDQoOTIpOgoJZmE9MjQoOTIpCQoJMmM9MjYuMmIoJ14jLis/Oi0/WzAtOV0qKC4qPyksKC4qPylcYmYoLio/KSQnLDI2LmY4KzI2LmYxKzI2LmU4KzI2LmZjKS4yZChmYSkKCWJkID0gW10KCTNjIGIwLCA1MiwgOTIgNDEgMmM6CgkJMTMgPSB7ImIwIjogYjAsICI1MiI6IDUyLCAiOTIiOiA5Mn0KCQliZC43MygxMykKCTc3ID0gW10KCTNjIDcgNDEgYmQ6CgkJMTMgPSB7IjUyIjogN1siNTIiXSwgIjkyIjogN1siOTIiXX0KCQkyYz0yNi4yYignICguKz8pPSIoLis/KSInLDI2LmY4KzI2LmYxKzI2LmU4KzI2LmZjKS4yZCg3WyJiMCJdKQoJCTNjIDg5LCA4YSA0MSAyYzoKCQkJMTNbODkuODEoKS5jMigpLmEwKCctJywgJzEwNicpXSA9IDhhLjgxKCkKCQk3Ny43MygxMykKCWY2IDc3CgkgICAgIAoyOSA1Yig5MixlOSk6CgkgICAgNTY9NWMKCSAgICAxZD1mLjMzKDUyLCAyZT0zNSwxNj0zNSk7IDFkLjQzKCA3OT0iNjMiLCAyNz17ICI2MiI6IDUyIH0gKQoJICAgIDU2PWUuMTIoNGY9NjEoMjguMWJbMV0pLDkyPTkyLDNhPTFkKQoJICAgIDJmOgoJCTFhLmJjICgpLmNlKDkyLCAxZCwgODIpCgkJZjYgNTYKCSAgICBkNzoKCQkyMQoJICAgIAoyOSA2ZigpOgoJMzggPSAnJwoJOWUgPSAnYmU6Ly9hYy5hZS5lNS9iNC8xMDQvMWYtNDYvZDY/NTMnCglmYSA9IDI0KDllKQoJZmEgPSBmYS5hMCgnL2JmJywnJykKCWZhID0gZmEuNTUoJzkxLTgnKS5hYignOTEtOCcpLmEwKCcmIzM5OycsJ1wnJykuYTAoJyYjMTA7JywnIC0gJykuYTAoJyYjYzk7JywnJykKCTRiPTI2LjJiKCI8OGQ+KC4rPyk8LzhkPi4rPzw2ND4oLis/KTwvNjQ+IiwyNi43MCkuMmQoZmEpWzE6XQoJM2MgMTEsIDU0IDQxIDRiOgoJICAgIDJmOgoJCQkgICAgMTEgPSAxMS41NSgnY2MnLCAnNzYnKQoJICAgIGQ3OgoJCQkgICAgMTEgPSAxMS41NSgnOTEtOCcsJzc2JykKCSAgICA1NCA9IDU0WzotMTVdCgkgICAgMTEgPSAxMS5hMCgnJmU2OycsJycpCgkgICAgNTQgPSAnWzRlIDliXVtiXScrNTQrJ1svYl1bLzRlXScKCSAgICAzOCA9IDM4KzU0KydcYmYnKzExKydcYmYnKydcYmYnCgk1ZCgnWzRlIDliXVtiXUBhMVsvYl1bLzRlXScsIDM4KQoKMjkgNWQoNmEsIDM4KToKICAgIDlkID0gYzYKICAgIDFhLjZkKCc2NSglZCknICUgOWQpCiAgICAxYS44NigxMDApCiAgICA5NCA9IGYuYjMoOWQpCiAgICA2MCA9IDUwCiAgICBjMCAoNjAgPiAwKToKCTJmOgoJICAgIDFhLjg2KDEwKQoJICAgIDYwIC09IDEKCSAgICA5NC40ZCgxKS45Nig2YSkKCSAgICA5NC40ZCg1KS5hNygzOCkKCSAgICBmNgoJZDc6CgkgICAgMjEKCQkJCSAgICAgCjI5IDI0KDkyKToKCTkzID0gNDUuYTYoOTIpCgk5My44MCgnZDUtYzgnLCAnYTIvNS4wICg2YjsgZTg7IDZiIGY5IDUuMTsgZjUtZmQ7IGYyOjEuOS4wLjMpIGNhLzg3IGE5LzMuMC4zJykKCTNkID0gNDUuYTQoOTMpCglmYT0zZC5kYygpCglmYSA9IGZhLmEwKCdcMTA1JywnJykuYTAoJ1wxMDMnLCcnKS5hMCgnJmU0OycsJycpLmEwKCdcJycsJycpCgkzZC5jNCgpCglmNiBmYQoKMjkgNDkoKToKCTQ4PVtdCgkzZT0yOC4xYlsyXQoJNzggZmIoM2UpPj0yOgoJCWIwPTI4LjFiWzJdCgkJMzI9YjAuYTAoJz8nLCcnKQoJCTc4IChiMFtmYihiMCktMV09PScvJyk6CgkJCWIwPWIwWzA6ZmIoYjApLTJdCgkJMTk9MzIuODgoJyYnKQoJCTQ4PXt9CgkJM2MgZjcgNDEgYzMoZmIoMTkpKToKCQkJZWQ9e30KCQkJZWQ9MTlbZjddLjg4KCc9JykKCQkJNzggKGZiKGVkKSk9PTI6CgkJCQk0OFtlZFswXV09ZWRbMV0KCQkJICAgICAgIAoJZjYgNDgKCSAgICAgICAKMjkgZmYoNTIsOTIsZWUsZTksNiw0PScnKToKCWUwPTI4LjFiWzBdKyI/OTI9IitjLjE4KDkyKSsiJmVlPSIrMzcoZWUpKyImNTI9IitjLjE4KDUyKSsiJjQ9IiszNyg0KQoJNTY9NWMKCTFkPWYuMzMoNTIsIDJlPSIzMC44ZiIsIDE2PWU5KQoJMWQuNDMoIDc5PSI2MyIsIDI3PXsgIjYyIjogNTIsICc5YSc6IDQgfSApCgkxZC4zZignMzYnLCA2KQoJNTY9ZS4xMig0Zj02MSgyOC4xYlsxXSksOTI9ZTAsM2E9MWQsNWE9NWMpCglmNiA1NgoKMjkgMWUoNTIsOTIsZWUsZTksNiw0PScnKToKCWUwPTI4LjFiWzBdKyI/OTI9IitjLjE4KDkyKSsiJmVlPSIrMzcoZWUpKyImNTI9IitjLjE4KDUyKSsiJjQ9IiszNyg0KQoJNTY9NWMKCTFkPWYuMzMoNTIsIDJlPSIzMC44ZiIsIDE2PWU5KQoJMWQuNDMoIDc5PSI2MyIsIDI3PXsgIjYyIjogNTIsICc5YSc6IDQgfSApCgkxZC4zZignMzYnLCA2KQoJNTY9ZS4xMig0Zj02MSgyOC4xYlsxXSksOTI9ZTAsM2E9MWQsNWE9ODIpCglmNiA1NgoKYjA9NDkoKTsgOTI9MmE7IDUyPTJhOyBlZT0yYTsgNTg9MmE7IGU5PTJhCjJmOiA1OD1jLmQyKGIwWyI1OCJdKQpkNzogMjEKMmY6IDkyPWMuZDIoYjBbIjkyIl0pCmQ3OiAyMQoyZjogNTI9Yy5kMihiMFsiNTIiXSkKZDc6IDIxCjJmOiBlZT02MShiMFsiZWUiXSkKZDc6IDIxCjJmOiBlOT1jLmQyKGIwWyJlOSJdKQpkNzogMjEKIAo0YSAiZDQ6ICIrMzcoNTgpOyA0YSAiZTE6ICIrMzcoZWUpOyA0YSAiZTc6ICIrMzcoOTIpOyA0YSAiY2Y6ICIrMzcoNTIpCiAKNzggZWU9PTJhIGUyIDkyPT0yYSBlMiBmYig5Mik8MTogODMoKQo3YSBlZT09MTo1OSg5MikKN2EgZWU9PTI6NmYoKQo3YSBlZT09Mzo1Yig5MixlOSkKCgoKZS42Nyg2MSgyOC4xYlsxXSkp")))(lambda a,b:b[int("0x"+a.group(1),16)],"0|1|2|3|description|5|fanart|channel|8|9|a|B|urllib|d|xbmcplugin|xbmcgui|10|status|addDirectoryItem|item_data|adultpass|15|thumbnailImage|addon_id|quote_plus|pairsofparams|xbmc|argv|selfAddon|liz|addLink|AKfycbyBcUa5TlEQudk6Y_0o0ZubnmhGL_|20|pass|password|keyb|open_url|channels|re|infoLabels|sys|def|None|compile|matches|findall|iconImage|try|DefaultFolder|translatePath|cleanedparams|ListItem|dialog|icon|fanart_image|str|text|39|listitem|adultopt|for|response|paramstring|setProperty|metalkettle|in|isConfirmed|setInfo|GetList|urllib2|b7Up8kQt11xgVwz3ErTo|passw|param|get_params|print|match|getSetting|getControl|COLOR|handle|50|xbmcaddon|name|588677963413065728|dte|decode|ok|Keyboard|site|GetChans|isFolder|PLAYLINK|True|showText|Password|Addon|retry|int|Title|Video|pubDate|ActivateWindow|baseurl|endOfDirectory|special|doModal|heading|Windows|Content|executebuiltin|getText|TWITTER|DOTALL|ret|UKTurk|append|Dialog|Please|ignore|list|if|type|elif|common_addon|import|addons|Cancel|yesno|add_header|strip|False|Index|adult|accidental|sleep|2008092417|split|field|value|Adult|setSetting|title|XXX|png|resources|utf|url|req|win|true|setLabel|path|home|join|plot|blue|http|id|twit|continue|replace|uk_turk|Mozilla|Twitter|urlopen|content|Request|setText|prevent|Firefox|twitter|encode|script|jpg|google|www|params|set|Set|Window|macros|the|thumbs|ukturk|to|access|os|plugin|Player|li|https|n|while|opted|lower|range|close|enter|10147|money|Agent|x2026|Gecko|addon|ascii|video|play|Name|Lets|else|unquote_plus|Turk|Site|User|exec|except|libs|from|Feed|have|read|show|Show|co|u|Mode|or|cats|nbsp|com|amp|URL|U|iconimage|You|txt|img|splitparams|mode|you|not|M|rv|UK|me|en|return|i|I|NT|link|len|S|GB|Go|addDir|100|thumb|h|t|s|r|_".split("|")))
+import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys
+from resources.libs.common_addon import Addon
+
+addon_id        = 'plugin.video.ukturk'
+selfAddon       = xbmcaddon.Addon(id=addon_id)
+addon           = Addon(addon_id, sys.argv)
+fanart          = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id , 'fanart.jpg'))
+icon            = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'icon.png'))
+baseurl         = 'http://www.metalkettle.co/UKTurk/cats.txt'
+adultopt        = selfAddon.getSetting('adult')
+adultpass       = selfAddon.getSetting('password')
+url             = addon.queries.get('iconimage', '')
+
+def Index():
+        link=open_url(baseurl)	
+	match=re.compile('name="(.+?)".+?url="(.+?)".+?img="(.+?)"',re.DOTALL).findall(link)
+	for name,url,iconimage in match:
+                if not 'XXX' in name:
+                        iconimage = iconimage.replace(' ','%20') 
+                        url = url.replace(' ','%20')
+                        addDir(name,url,1,iconimage,fanart)
+                if 'XXX' in name:
+                        if adultopt == 'true':
+                                if adultpass == '':
+                                    dialog = xbmcgui.Dialog()
+                                    ret = dialog.yesno('Adult Content', 'You have opted to show adult content','','Please set a password to prevent accidental access','Cancel','Lets Go')
+                                    if ret == 1:
+                                        keyb = xbmc.Keyboard('', 'Set Password')
+                                        keyb.doModal()
+                                        if (keyb.isConfirmed()):
+                                            passw = keyb.getText()
+                                            selfAddon.setSetting('password',passw)      
+                                        iconimage = iconimage.replace(' ','%20') 
+                                        url = url.replace(' ','%20')
+                                        addDir(name,url,1,iconimage,fanart)
+                        if adultopt == 'true':
+                                if adultpass <> '':
+                                        iconimage = iconimage.replace(' ','%20') 
+                                        url = url.replace(' ','%20')
+                                        addDir(name,url,1,iconimage,fanart)
+        addLink('UK Turk Twitter Feed','url',2,'http://www.metalkettle.co/UKTurk/thumbs/twitter.jpg',fanart)
+        xbmc.executebuiltin('Container.SetViewMode(500)')
+      
+def GetChans(url):
+        print iconimage
+        if 'XXX' in url:
+                if adultpass <> '':
+                        dialog = xbmcgui.Dialog()
+                        ret = dialog.yesno('Adult Content', 'Please enter the password you set','to continue','','Cancel','Show me the money')
+                        if ret == 1:
+                           try:     
+                              keyb = xbmc.Keyboard('', 'Set Password')
+                              keyb.doModal()
+                              if (keyb.isConfirmed()):
+                                    passw = keyb.getText()
+                              if passw == adultpass:
+                                channels = GetList(url)
+                                for channel in channels:
+                                       addLink(channel["name"],channel["url"],3,iconimage,fanart)
+                           except:pass
+        else:
+                channels = GetList(url)
+                for channel in channels:
+                        addLink(channel["name"],channel["url"],3,iconimage,fanart)
+        xbmc.executebuiltin('Container.SetViewMode(50)')
+        
+def GetList(url):
+	link=open_url(url)	
+	matches=re.compile('^#.+?:-?[0-9]*(.*?),(.*?)\n(.*?)$',re.I+re.M+re.U+re.S).findall(link)
+	li = []
+	for params, name, url in matches:
+		item_data = {"params": params, "name": name, "url": url}
+		li.append(item_data)
+	list = []
+	for channel in li:
+		item_data = {"name": channel["name"], "url": channel["url"]}
+		matches=re.compile(' (.+?)="(.+?)"',re.I+re.M+re.U+re.S).findall(channel["params"])
+		for field, value in matches:
+			item_data[field.strip().lower().replace('-', '_')] = value.strip()
+		list.append(item_data)
+	return list
+             
+def PLAYLINK(url):
+            ok=True
+            liz=xbmcgui.ListItem(name, iconImage=iconimage,thumbnailImage=iconimage); liz.setInfo( type="Video", infoLabels={ "Title": name } )
+            ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=url,listitem=liz)
+            try:
+                xbmc.Player ().play(url, liz, False)
+                return ok
+            except:
+                pass
+            
+def TWITTER():
+        text = ''
+        twit = 'https://script.google.com/macros/s/AKfycbyBcUa5TlEQudk6Y_0o0ZubnmhGL_-b7Up8kQt11xgVwz3ErTo/exec?588677963413065728'
+        link = open_url(twit)
+        link = link.replace('/n','')
+        link = link.decode('utf-8').encode('utf-8').replace('&#39;','\'').replace('&#10;',' - ').replace('&#x2026;','')
+        match=re.compile("<title>(.+?)</title>.+?<pubDate>(.+?)</pubDate>",re.DOTALL).findall(link)[1:]
+        for status, dte in match:
+            try:
+                            status = status.decode('ascii', 'ignore')
+            except:
+                            status = status.decode('utf-8','ignore')
+            dte = dte[:-15]
+            status = status.replace('&amp;','')
+            dte = '[COLOR blue][B]'+dte+'[/B][/COLOR]'
+            text = text+dte+'\n'+status+'\n'+'\n'
+        showText('[COLOR blue][B]@uk_turk[/B][/COLOR]', text)
+
+def showText(heading, text):
+    id = 10147
+    xbmc.executebuiltin('ActivateWindow(%d)' % id)
+    xbmc.sleep(100)
+    win = xbmcgui.Window(id)
+    retry = 50
+    while (retry > 0):
+        try:
+            xbmc.sleep(10)
+            retry -= 1
+            win.getControl(1).setLabel(heading)
+            win.getControl(5).setText(text)
+            return
+        except:
+            pass
+                                     
+def open_url(url):
+        req = urllib2.Request(url)
+        req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3')
+        response = urllib2.urlopen(req)
+        link=response.read()
+        link = link.replace('\r','').replace('\t','').replace('&nbsp;','').replace('\'','')
+        response.close()
+        return link
+
+def get_params():
+        param=[]
+        paramstring=sys.argv[2]
+        if len(paramstring)>=2:
+                params=sys.argv[2]
+                cleanedparams=params.replace('?','')
+                if (params[len(params)-1]=='/'):
+                        params=params[0:len(params)-2]
+                pairsofparams=cleanedparams.split('&')
+                param={}
+                for i in range(len(pairsofparams)):
+                        splitparams={}
+                        splitparams=pairsofparams[i].split('=')
+                        if (len(splitparams))==2:
+                                param[splitparams[0]]=splitparams[1]
+                               
+        return param
+               
+def addDir(name,url,mode,iconimage,fanart,description=''):
+        u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)
+        ok=True
+        liz=xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
+        liz.setInfo( type="Video", infoLabels={ "Title": name, 'plot': description } )
+        liz.setProperty('fanart_image', fanart)
+        ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=True)
+        return ok
+
+def addLink(name,url,mode,iconimage,fanart,description=''):
+        u=sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+str(mode)+"&name="+urllib.quote_plus(name)+"&iconimage="+urllib.quote_plus(iconimage)+"&description="+urllib.quote_plus(description)
+        ok=True
+        liz=xbmcgui.ListItem(name, iconImage="DefaultFolder.png", thumbnailImage=iconimage)
+        liz.setInfo( type="Video", infoLabels={ "Title": name, 'plot': description } )
+        liz.setProperty('fanart_image', fanart)
+        ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=liz,isFolder=False)
+        return ok
+
+params=get_params(); url=None; name=None; mode=None; site=None; iconimage=None
+try: site=urllib.unquote_plus(params["site"])
+except: pass
+try: url=urllib.unquote_plus(params["url"])
+except: pass
+try: name=urllib.unquote_plus(params["name"])
+except: pass
+try: mode=int(params["mode"])
+except: pass
+try: iconimage=urllib.unquote_plus(params["iconimage"])
+except: pass
+ 
+print "Site: "+str(site); print "Mode: "+str(mode); print "URL: "+str(url); print "Name: "+str(name)
+ 
+if mode==None or url==None or len(url)<1: Index()
+elif mode==1:GetChans(url)
+elif mode==2:TWITTER()
+elif mode==3:PLAYLINK(url)
+
+
+
+xbmcplugin.endOfDirectory(int(sys.argv[1]))

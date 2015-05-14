@@ -38,7 +38,10 @@ def GETMOVIES(url,name):
 def GETEPISODES(url,name,iconimage):
         link = open_url(url)
         link=link.replace('\n','').replace('  ','')
-        match=re.compile('<td><a title="(.+?)" href="(.+?)">.+?</td>',re.DOTALL).findall(link)
+
+        match=re.compile('<atitle="(.+?)" href="(.+?)">.+?</a>',re.DOTALL).findall(link)
+
+        
         for name, url in match:
                 name = cleanHex(name)
                 addLink(name,url,100,iconimage,fanart)

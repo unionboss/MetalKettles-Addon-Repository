@@ -34,11 +34,11 @@ def MKSports(url):
         cat=item['cat_id']
         thumb='http://mobile.desistreams.tv/'+thumb
         if url=='0':
-            addLink(name+' - Stream 1',stream1,100,thumb,'')
+            #addLink(name+' - Stream 1',stream1,100,thumb,'')
             addLink(name+' - Stream 2',stream2,100,thumb,'')
             addLink(name+' - Stream 3',stream3,100,thumb,'')
         if cat==url:
-            addLink(name+' - Stream 1',stream1,100,thumb,'')
+            #addLink(name+' - Stream 1',stream1,100,thumb,'')
             addLink(name+' - Stream 2',stream2,100,thumb,'')
             addLink(name+' - Stream 3',stream3,100,thumb,'')
     xbmcplugin.addSortMethod(int(sys.argv[1]), xbmcplugin.SORT_METHOD_VIDEO_TITLE)

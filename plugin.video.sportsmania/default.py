@@ -110,7 +110,7 @@ def PlayMatrixStream(url):
     liz=xbmcgui.ListItem(name, iconImage=icon,thumbnailImage=icon); liz.setInfo( type="Video", infoLabels={ "Title": name } )
     ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=link,listitem=liz)
     try:
-        xbmc.Player().play(link, liz, False)
+        xbmc.Player().play(link + ' timeout=20 live=true', liz, False)
         return ok
     except:
         pass

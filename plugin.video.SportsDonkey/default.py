@@ -61,11 +61,12 @@ def Index():
     addDir('Video on Demand','url',4,icon,fanart)
     
 def live():
-    net.set_cookies(cookie_file)
+    setCookie('http://sportsdonkey.club/site/member')
     response = net.http_GET('http://sportsdonkey.club/site/live/')
     link = response.content
     link = cleanHex(link)
     link=link.replace('onclick=SwitchMenu','\nonclick=SwitchMenu')
+    print link
     cats=re.compile("\('.+?'\)>(.+?)</div>").findall(link)
     for name in cats:
         addDir(name,name,2,icon,fanart)

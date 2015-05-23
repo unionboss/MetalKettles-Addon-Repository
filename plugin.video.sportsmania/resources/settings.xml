@@ -2,7 +2,8 @@
 <settings>
 	<category label="Sports Mania">
 		<setting id="snusername" type="text" label="Sports Mania Username" default="" visible="true"/>
-		<setting id="snpassword" type="text"label="Sports Mania Password" default="" visible="true" option="hidden" />
+		<setting id="snpassword" type="text"label="Sports Mania Password" default="" visible="true"/>
 		<setting label="Visit http://sportsmania.eu/register.php to signup for your account" type="lsep" />
+		<setting id="counter" type="text" label="hidden counter" default="no" visible="false"/>
 	</category>
 </settings>

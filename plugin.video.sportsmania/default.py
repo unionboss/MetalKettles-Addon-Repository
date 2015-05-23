@@ -1,10 +1,12 @@
-import xbmc, xbmcgui, xbmcaddon, xbmcplugin, urllib, re, string, os, time, json, urllib2, cookielib, md5, mknet
+import xbmc, xbmcgui, xbmcaddon, xbmcplugin, urllib, re, string, os, time, urllib2, cookielib, md5, mknet
+import json
 
 addon_id 	= 'plugin.video.sportsmania'
 art 		= xbmc.translatePath(os.path.join('special://home/addons/' + addon_id + '/resources/art/'))
 selfAddon 	= xbmcaddon.Addon(id=addon_id)
 user 		= selfAddon.getSetting('snusername')
 passw 		= selfAddon.getSetting('snpassword')
+counter		= selfAddon.getSetting('counter')
 datapath 	= xbmc.translatePath(selfAddon.getAddonInfo('profile'))
 fanart          = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id , 'fanart.jpg'))
 icon            = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'icon.png'))
@@ -15,7 +17,7 @@ def setCookie(srDomain):
     import hashlib
     m = hashlib.md5()
     m.update(passw)
-    net.http_POST('http://sportsmania.eu/login.php?do=login/?COLLCC=1',{'vb_login_username':user,'vb_login_password':passw,'vb_login_md5password':m.hexdigest(),'vb_login_md5password_utf':m.hexdigest(),'do':'login','securitytoken':'guest','url':'http://sportsmania.eu//view.php?pg=navigation','s':''})
+    net.http_POST('http://sportsmania.eu/login.php?do=login',{'vb_login_username':user,'vb_login_password':passw,'vb_login_md5password':m.hexdigest(),'vb_login_md5password_utf':m.hexdigest(),'do':'login','securitytoken':'guest','url':'http://sportsmania.eu/forum.php','s':''})
     net.save_cookies(cookie_file)
     net.set_cookies(cookie_file)
 
@@ -32,15 +34,18 @@ if user == '' or passw == '':
             if (keyb.isConfirmed()):
                 password = keyb.getText()
                 selfAddon.setSetting('snusername',username)
-                selfAddon.setSetting('snpassword',password)	
+                selfAddon.setSetting('snpassword',password)
+                
 def MainMenu():
-    setCookie('http://sportsmania.eu/view.php?pg=navigation')
+    selfAddon.setSetting('counter','no')
+    setCookie('http://sportsmania.eu/forum.php')
     net.set_cookies(cookie_file)
     response = net.http_GET('http://sportsmania.eu/forum.php')
-    if '<li class="welcomelink">Welcome, <a href="member.php?' in response.content:
+    print response.content
+    if 'welcomelink' in response.content:
         addDir('[COLOR cyan]----Calendar----[/COLOR]','url',3,icon,fanart)
         addLink('','url','mode',icon,fanart)
-        setCookie('http://sportsmania.eu/view.php?pg=navigation')
+        setCookie('http://sportsmania.eu/forum.php')
         net.set_cookies(cookie_file)
         response = net.http_GET('http://sportsmania.eu/view.php?pg=navigation')
         if '>ACTIVE<'in response.content:
@@ -53,12 +58,21 @@ def MainMenu():
         addLink('','url','mode',icon,fanart)
         addLink('','url','mode',icon,fanart)
         addLink('[COLOR blue][I]To Subscribe to Elite streams please visit http://sportsmania.eu/payments.php[/I][/COLOR]','url','mode',icon,fanart)
-    else:addLink('[COLOR greenyellow]Click here to login[/COLOR]','url',6,icon,fanart)
+    else:
+        refresh()
     xbmc.executebuiltin('Container.SetViewMode(50)')
 
 def refresh():
-    xbmc.executebuiltin('Container.Refresh')
-
+    if counter=='no':
+        selfAddon.setSetting('counter','yes')
+        xbmc.executebuiltin('Container.Refresh')
+    if counter=='yes':
+        dialog = xbmcgui.Dialog()
+        dialog.ok('[COLOR greenyellow]Sports Mania[/COLOR]', 'Login Failure','Please check your credentials','')
+        selfAddon.setSetting('snusername','')
+        selfAddon.setSetting('snpassword','')
+        quit()
+        
 def StreamMenu(name,url):
     net.set_cookies(cookie_file)
     if url == 'channels':
@@ -74,7 +88,6 @@ def StreamMenu(name,url):
             if channel_online == '1':channel_online = '[COLOR green][B] (Online)[/B][/COLOR]'
             else:channel_online = '[COLOR red] (Offline)[/COLOR]'
             namestring = channel_title+channel_online
-            print name
             if 'Free' in name:
                 if premium == '0':
                     addLink(namestring,channel_url,7,icon,fanart)
@@ -96,7 +109,6 @@ def StreamMenu(name,url):
             if channel_title =='':
                 channel_title=channel_name.replace('Channel','Channel ')
             namestring = channel_title+channel_online
-            print name
             if 'Free' in name:
                 if premium == '0':
                     addLink(namestring,channel_url,2,icon,fanart)
@@ -104,7 +116,7 @@ def StreamMenu(name,url):
     xbmc.executebuiltin('Container.SetViewMode(51)')
 
 def PlayMatrixStream(url):
-    net.set_cookies(cookie_file)
+    setCookie('http://sportsmania.eu/forum.php')
     link = net.http_GET(url).content
     ok=True
     liz=xbmcgui.ListItem(name, iconImage=icon,thumbnailImage=icon); liz.setInfo( type="Video", infoLabels={ "Title": name } )

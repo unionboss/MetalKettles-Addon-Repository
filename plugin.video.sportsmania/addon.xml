@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.sportsmania"
        name="SportsMania"
-       version="2.2.8"
+       version="2.2.10"
        provider-name="SportsMania">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -16,7 +16,7 @@
     <extension point="xbmc.addon.metadata">
     <summary lang="en">Premium sports streaming service</summary>
     <description lang="en">This is a premium streaming service you will need an account from http://sportsmania.eu/ @SportsMania005 www.facebook.com/sportsnationhdtv</description>
-    <disclaimer lang="en">[COLOR red][B][I]TheYid repo only Hosts the addon for support please go to http://sportsmania.eu/ or @SportsMania005 and www.facebook.com/sportsnationhdtv[/B][/I][/COLOR]</disclaimer>
+    <disclaimer lang="en">For support please go to http://sportsmania.eu/ or @SportsMania005 and www.facebook.com/sportsnationhdtv</disclaimer>
     <platform>all</platform>
   </extension>
 </addon>

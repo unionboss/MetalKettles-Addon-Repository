@@ -418,7 +418,7 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.NJMSOCCER" name="NJM Soccer" version="1.0.2" provider-name="MetalKettle">
+<addon id="plugin.video.NJMSOCCER" name="NJM Soccer" version="1.0.2" provider-name="MetalKettle / NJM">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
@@ -632,6 +632,19 @@
 		<info compressed="false">http://raw.github.com/metalkettle/MetalKettles-Addon-Repository/master/addons.xml</info>
 		<checksum>http://raw.github.com/metalkettle/MetalKettles-Addon-Repository/master/addons.xml.md5</checksum>
 		<datadir zip="true">http://raw.github.com/metalkettle/MetalKettles-Addon-Repository/master/zips</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>Install my Addons</summary>
+		<description>Download and install addons from MetalKettle</description>
+		<platform>all</platform>
+	</extension>
+</addon>
+
+<addon id="repository.metalkettle2" name="MetalKettles Addon Repository" version="1.5.0" provider-name="MetalKettle">
+	<extension point="xbmc.addon.repository" name="MetalKettles Addon Repository">
+		<info compressed="false">http://repo.metalkettle.co/addons.xml</info>
+		<checksum>http://repo.metalkettle.co/addons.xml.md5</checksum>
+		<datadir zip="true">http://repo.metalkettle.co/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Install my Addons</summary>

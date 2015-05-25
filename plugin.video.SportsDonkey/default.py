@@ -56,11 +56,12 @@ def getchannels(name,url):
     link = cleanHex(link)
     link=link.replace('onclick=SwitchMenu','\nonclick=SwitchMenu').replace('</a><br ','')
     match=re.compile("onclick=SwitchMenu(.+?)\n").findall(link)
+    print match
     for catdata in match:
         cats=re.compile("\('.+?'\)>(.+?)</div>").findall(catdata)
         for catname in cats:
             if catname == name:
-                channels=re.compile("<a href=(.+?)>(.+?)/>-").findall(catdata)
+                channels=re.compile("<a href=(.+?)>(.+?)/>").findall(catdata)
                 for url, name in channels:
                     url = 'http://sportsdonkey.club/site/live/'+url
                     addLink(name,url,3,icon,fanart)

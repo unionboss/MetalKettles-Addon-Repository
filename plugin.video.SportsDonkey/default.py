@@ -1,4 +1,5 @@
 import base64,urllib,urllib2,re,cookielib,string,os,xbmc, xbmcgui, xbmcaddon, xbmcplugin, random, datetime,urlparse,mknet
+from resources.libs.common_addon import Addon
 
 addon_id        = 'plugin.video.SportsDonkey'
 selfAddon       = xbmcaddon.Addon(id=addon_id)
@@ -8,9 +9,60 @@ icon            = xbmc.translatePath(os.path.join('special://home/addons/' + add
 user            = selfAddon.getSetting('hqusername')
 passw           = selfAddon.getSetting('hqpassword')
 cookie_file     = os.path.join(os.path.join(datapath,''), 'SD.lwp')
+cookie_file2    = os.path.join(os.path.join(datapath,''), 'DS.lwp')
 net             = mknet.Net()
 
-exec("import re;import base64");exec((lambda p,y:(lambda o,b,f:re.sub(o,b,f))(r"([0-9a-f]+)",lambda m:p(m,y),base64.b64decode("MWIgMjMgPT0gJycgNWYgMjQgPT0gJycgNWYgMjMgPT0gJzQyJzoKCTFiIDUyLjM3LjNjKDIpOgoJCTUyLjVhKDIpCgk3NDoKCQkxYyA9IFsnMzIuNDguNGInLCAnMzIuNDguMzgnXQoJCTViIDFhIDM1IDFjOgoJCQliID0gM2EuMmUoNTIuMzcuNmYoJzU2Oi8vNzIvNTAvNDcvJysxYSwgJzU0Ljc1JykpCgkJCTFiIDUyLjM3LjNjKGIpOgoJCQkJMzMgPSA2YihiLCAnNmMnKQoJCQkJMWYgPSAzMy43MygpCgkJCQkyNiA9IDMxLmMoJzwyOCA1NT0iNDUiIGQ9IiguKz8pIicpLjQoMWYpWzBdCgkJCQkyYyA9IDMxLmMoJzwyOCA1NT0iNDYiIGQ9IiguKz8pIicpLjQoMWYpWzBdCgkJCQkxYiAnMjUnIDM1IDFhOgoJCQkJCTcwID0gJ2U6Ly80MS4yMi40ZC43MS8zOScKCQkJCQkxOSA9ICdlOi8vNDEuMjIuNGQuNzEvNS9mLzU1LzMvJwoJCQkJM2Q6CgkJCQkJNzAgPSAnZTovLzIxLjRkLzJhLzM5JwoJCQkJCTE5ID0gJ2U6Ly8yMS40ZC8yYS81L2YvNTUvOC8nCgkJCQk0ZSA9IDEzLjgwKDcwKS41CgkJCQk2YyA9IDMxLjQoNmMnPDYzIDY5PSI1OSIgM2U9IiguKz8pIiBkPSIoLis/KSIgLz4nLCA0ZSwgMzEuN2UpCgkJCQk3ZCA9IHt9CgkJCQk3ZFsnMmYnXSA9IDI2CgkJCQk3ZFsnNDAnXSA9IDJjCgkJCQk1YiAzZSwgZCAzNSA2YzoKCQkJCQk3ZFszZV0gPSBkCgkJCQkJMTMuODAoNzApCgkJCQkJMTMuNDkoNzAsN2QpCgkJCQkJMTMuMzAoMikKCQkJCQkxMy40MygyKQoJCQkJCTYgPSAxMy44MCg3MCkKCQkxYiAnNjEgMzUgNzgnIDM1IDYuNToKCQkJCTYgPSAxMy44MCgxOSkKCQkJCTM0ID0gNi41CgkJCQkyMz0zMS5jKCc8Nz4oLis/KTwvNz4nKS40KDM0KVswXQoJCQkJMjQ9MzEuYygnPGE+KC4rPyk8L2E+JykuNCgzNClbMF0KCQkzZDoKCQkJCTc5ID0gMmIuMzYoKQoJCQkJNzkuN2MoJzFkIDFlJywgJzY3IDY1JywnNzcgNjQgNTggNTcgMzUuIDNiIDY2IDNmIDJkJywnNWQgM2YgMTQgN2IgNjAgNmQgZTovLzExLjUzJykKCQkJCTRhKCkKCgk1ZToKCQk3OSA9IDJiLjM2KCkKCQk1YyA9IDc5LjYyKCcxZCAxZScsICczYiA2OCAzZiAxZCAxZSAxNCAyZCcsJzVmIDUxIDFiIDc2IDZlIDZhIDdhIDE0IDZkIGU6Ly8xMS41MycpCgoKCQkxYiA1YyA9PSAxOgoJCQk5ID0gM2EuMjAoJycsICc0NCA0YycpCgkJCTkuMjcoKQoJCQkxYiAoOS4xMigpKToKCQkJCTEwID0gOS4yOSgpCgkJCQk3PTEwCgkJCQk5ID0gM2EuMjAoJycsICc0NCA0ZjonKQoJCQkJOS4yNygpCgkJCQkxYiAoOS4xMigpKToKCQkJCSAgIDEwID0gOS4yOSgpCgkJCQkgICBhPTEwCgkJCQkgICA3Zi4xNygnMTgnLDcpCgkJCQkgICA3Zi4xNygnMTUnLGEpCgkJM2Q6NGEoKQoJCTIzID0gN2YuMTYoJzE4JykKCQkyNCA9IDdmLjE2KCcxNScp")))(lambda a,b:b[int("0x"+a.group(1),16)],"0|1|cookie_file|3|findall|content|response|username|8|keyb|password|wizardpath|compile|value|http|f|search|sportsdonkey|isConfirmed|net|account|hqpassword|getSetting|setSetting|hqusername|hqpass|addons|if|AddonList|Sports|Donkey|wizlog|Keyboard|dswizard|droidbox|user|passw|droidboxwizard|wizuser|doModal|setting|getText|amember|xbmcgui|wizpass|details|translatePath|amember_login|save_cookies|re|plugin|wizset|link|in|Dialog|path|UpdateWizard|member|xbmc|Please|exists|else|name|your|amember_pass|wizard|Droidsticks|set_cookies|Enter|dsusername|dspassword|addon_data|video|http_POST|quit|aswizard|Username|co|html|Password|userdata|register|os|club|settings|id|special|logging|ocurred|hidden|remove|for|ret|Ensure|except|or|active|Logged|yesno|input|error|Error|check|Login|enter|type|have|open|r|at|dont|join|amemberurl|uk|home|read|try|xml|you|An|as|dialog|an|is|ok|post_data|I|selfAddon|http_GET".split("|")))
+
+if user == '' or passw == '' or user == 'Droidsticks':
+    if os.path.exists(cookie_file):
+        os.remove(cookie_file)
+    if os.path.exists(cookie_file2):
+        os.remove(cookie_file2)
+
+
+    try:
+      wizardpath = xbmc.translatePath(os.path.join('special://home/userdata/addon_data/plugin.video.aswizard', 'settings.xml'))
+      wizset = open(wizardpath, 'r')
+      wizurl = "http://dswizard.co/amember/member" 
+      wizlog = wizset.read()
+      wizuser = re.compile('<setting id="dsusername" value="(.+?)"').findall(wizlog)[0]
+      wizpass = re.compile('<setting id="dspassword" value="(.+?)"').findall(wizlog)[0]
+      html = net.http_GET(wizurl).content
+      r = re.findall(r'<input type="hidden" name="(.+?)" value="(.+?)" />', html, re.I)
+      post_data = {}
+      post_data['amember_login'] = wizuser
+      post_data['amember_pass'] = wizpass
+      for name, value in r:
+          post_data[name] = value
+      net.http_GET(wizurl)
+      net.http_POST(wizurl,post_data)
+      net.save_cookies(cookie_file2)
+      net.set_cookies(cookie_file2)
+      response = net.http_GET(wizurl)
+      if 'Logged in as' in response.content:
+          response = net.http_GET('http://dswizard.co/amember/content/f/id/8/')
+          link = response.content
+          user=re.compile('<username>(.+?)</username>').findall(link)[0]
+          passw=re.compile('<password>(.+?)</password>').findall(link)[0]
+    except:
+      dialog = xbmcgui.Dialog()
+      ret = dialog.yesno('HQZone', 'Please enter your HQZone account details','or register if you dont have an account','at www.HQZone.Tv','Cancel','Login')
+      if ret == 1:
+          keyb = xbmc.Keyboard('', 'Enter Username')
+          keyb.doModal()
+          if (keyb.isConfirmed()):
+              search = keyb.getText()
+              username=search
+              keyb = xbmc.Keyboard('', 'Enter Password:')
+              keyb.doModal()
+              if (keyb.isConfirmed()):
+                  search = keyb.getText()
+                  password=search
+                  selfAddon.setSetting('hqusername',username)
+                  selfAddon.setSetting('hqpassword',password)
+      else:quit()
+      user = selfAddon.getSetting('hqusername')
+      passw = selfAddon.getSetting('hqpassword')
 
 #############################################################################################################################
 

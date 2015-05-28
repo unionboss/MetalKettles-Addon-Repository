@@ -496,7 +496,7 @@
 
 <addon id="plugin.video.SportsDonkey"
        name="Sports Donkey"
-       version="1.0.5"
+       version="1.0.6"
        provider-name="MetalKettle">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>

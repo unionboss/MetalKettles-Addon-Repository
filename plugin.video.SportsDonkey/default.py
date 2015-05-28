@@ -44,12 +44,13 @@ if user == '' or passw == '' or user == 'Droidsticks':
           link = response.content
           user=re.compile('<username>(.+?)</username>').findall(link)[0]
           passw=re.compile('<password>(.+?)</password>').findall(link)[0]
+          
     except:
       dialog = xbmcgui.Dialog()
-      ret = dialog.yesno('HQZone', 'Please enter your HQZone account details','or register if you dont have an account','at www.HQZone.Tv','Cancel','Login')
+      ret = dialog.yesno('Sports Donkey', 'Please enter your Sports Donkey account details','or register if you dont have an account','at http://sportsdonkey.club','Cancel','Login')
       if ret == 1:
           keyb = xbmc.Keyboard('', 'Enter Username')
-          keyb.doModal()
+s           keyb.doModal()
           if (keyb.isConfirmed()):
               search = keyb.getText()
               username=search

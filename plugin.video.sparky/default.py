@@ -21,7 +21,7 @@ def menu():
     xbmc.executebuiltin('Container.SetViewMode(500)')
   
 def MKSports(url):
-    channelurl='http://mobile.desistreams.tv/DesiStreams/index2.php?tag=get_all_channel'
+    #channelurl='http://mobile.desistreams.tv/DesiStreams/index2.php?tag=get_all_channel'
     response=Get_url(channelurl)
     channels=json.loads(response)
     data=channels['channel']

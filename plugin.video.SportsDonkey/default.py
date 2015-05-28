@@ -50,7 +50,7 @@ if user == '' or passw == '' or user == 'Droidsticks':
       ret = dialog.yesno('Sports Donkey', 'Please enter your Sports Donkey account details','or register if you dont have an account','at http://sportsdonkey.club','Cancel','Login')
       if ret == 1:
           keyb = xbmc.Keyboard('', 'Enter Username')
-s           keyb.doModal()
+          keyb.doModal()
           if (keyb.isConfirmed()):
               search = keyb.getText()
               username=search

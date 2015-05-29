@@ -1,4 +1,4 @@
-import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys
+import xbmc,xbmcaddon,xbmcgui,xbmcplugin,urllib,urllib2,os,re,sys,urlresolver
 from resources.libs.common_addon import Addon
 
 addon_id        = 'plugin.video.ukturk'
@@ -6,10 +6,10 @@ selfAddon       = xbmcaddon.Addon(id=addon_id)
 addon           = Addon(addon_id, sys.argv)
 fanart          = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id , 'fanart.jpg'))
 icon            = xbmc.translatePath(os.path.join('special://home/addons/' + addon_id, 'icon.png'))
-baseurl         = 'http://www.metalkettle.co/UKTurk/cats.txt'
+baseurl         = 'http://www.metalkettle.co/UKTurk/Index.txt'
 adultopt        = selfAddon.getSetting('adult')
 adultpass       = selfAddon.getSetting('password')
-url             = addon.queries.get('iconimage', '')
+iconimage       = addon.queries.get('iconimage', '')
 
 def Index():
         link=open_url(baseurl)	
@@ -42,7 +42,8 @@ def Index():
         xbmc.executebuiltin('Container.SetViewMode(500)')
       
 def GetChans(url):
-        print iconimage
+        if 'Index' in url:
+                CatIndex(url)
         if 'XXX' in url:
                 if adultpass <> '':
                         dialog = xbmcgui.Dialog()
@@ -64,6 +65,22 @@ def GetChans(url):
                         addLink(channel["name"],channel["url"],3,iconimage,fanart)
         xbmc.executebuiltin('Container.SetViewMode(50)')
         
+def CatIndex(url):
+        link=open_url(url)	
+	match=re.compile('name="(.+?)".+?url="(.+?)".+?img="(.+?)"',re.DOTALL).findall(link)
+	for name,url,iconimage in match:
+                iconimage = iconimage.replace(' ','%20') 
+                url = url.replace(' ','%20')
+                addDir(name,url,1,iconimage,fanart)
+        xbmc.executebuiltin('Container.SetViewMode(50)')
+
+
+
+
+
+
+
+
 def GetList(url):
 	link=open_url(url)	
 	matches=re.compile('^#.+?:-?[0-9]*(.*?),(.*?)\n(.*?)$',re.I+re.M+re.U+re.S).findall(link)
@@ -81,11 +98,15 @@ def GetList(url):
 	return list
              
 def PLAYLINK(url):
+            
+            if urlresolver.HostedMediaFile(url).valid_url():
+                streamurl = urlresolver.HostedMediaFile(url).resolve()
+            else: streamurl=url 
             ok=True
             liz=xbmcgui.ListItem(name, iconImage=iconimage,thumbnailImage=iconimage); liz.setInfo( type="Video", infoLabels={ "Title": name } )
-            ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=url,listitem=liz)
+            ok=xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=streamurl,listitem=liz)
             try:
-                xbmc.Player ().play(url, liz, False)
+                xbmc.Player ().play(streamurl, liz, False)
                 return ok
             except:
                 pass
